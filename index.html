@@ -33,36 +33,139 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <style type="text/css">
+      html{
+          background: url('background-6.jpg') no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+          width:100%;
+          height:100%;
+      }
+    </style>
+
 </head>
 <body>
 
-  <div class="background">
-    <img src="/background-2.jpg"/>
-  </div>
+
   <div class="sidebar">
+
+    <div class="lang-btn-wrap">
+      <div class="lang-button" id="btn-es" onclick="switchToES()">Espa&ntilde;ol</div>
+      <div class="lang-button" id="btn-en" onclick="switchToEN()">English</div>
+    </div>
+
     <h1 class="title-text">
       Sukkha Wasi
     </h1>
-    <p><br><br><br>Mon 10/18<br>
-      closed</p>
-    <p>Tues 10/19<br>
-      closed</p>
-    <p>Wed 10/20 <br>
-      some class 10a</p>
-    <p>Thurs 10/21 <br>
-      some class 10a, other class 2p</p>
-    <p>Fri 10/22 <br>
-      dinner 5-7p</p>
-    <p>Sat 10/23 <br>
-      lunch 12-3p, dinner 5-7p</p>
-    <p>Sun 10/24 <br>
-      lunch 12-3p</p>
 
+    <p class="en"><span class="day-heading">Wed 10/27</span><br>
+      taichi 9-10:30a<br>
+      pottery 2-4p<br>
+      <a href="https://forms.gle/Brydu29iGuYt86VS8">game night</a> 6-9p
+     </p>
+   <p class="es"><span class="day-heading">miercoles 27/10</span><br>
+     taichi 9-10:30a<br>
+     cer&aacute;mica 2-4p<br>
+     <a href="https://forms.gle/Brydu29iGuYt86VS8">juegos de mesa</a> 6-9p
+    </p>
+
+    <p class="en"><span class="day-heading">Thurs 10/28</span><br>
+      pottery 2-4p</p>
+    <p class="es"><span class="day-heading">jueves 28/10</span><br>
+      cer&aacute;mica 2-4p
+     </p>
+
+    <p class="en"><span class="day-heading">Fri 10/29</span> <br>
+      taichi 9-10:30a<br>
+      dinner 5-7p</p>
+    <p class="es"><span class="day-heading">viernes 29/10</span> <br>
+      taichi 9-10:30a<br>
+      cena 5-7p</p>
+
+    <p class="en">
+      <span class="day-heading">Sat 10/30</span> <br>
+      lunch 12-3p<br>
+      dinner 5-7p</p>
+    <p class="es">
+      <span class="day-heading">s&aacutebado 30/10</span> <br>
+      almuerzo 12-3p<br>
+      cena 5-7p</p>
+
+    <p class="en"><span class="day-heading">Sun 10/31</span> <br>
+      lunch 12-3p</p>
+    <p class="es"><span class="day-heading">domingo 31/10</span> <br>
+      almuerzo 12-3p</p>
+
+    <p class="en"><span class="day-heading">Mon & Tues</span><br>
+      closed</p>
+    <p class="es"><span class="day-heading">lunes & martes</span><br>
+      cerrado</p>
+
+    <p class="nav en">
+      <a href="https://goo.gl/maps/xJCMix9BoEctXQXk7">map</a><br>
+      <a href="/img/menu.pdf">menu</a><br>
+      <a href="mailto:hola@sukkhawasi.com">contact</a>
+    </p>
+
+    <p class="date en">Happy <span id="date-day-en"></span>!<br>
+    <a href="https://enchantingwind.com">Maya</a> &#9829; <a href="https://andytrattner.com">Andy</a><br><span id="date-month-en"></span> <span class="date-num"></span><br>
+    </p>
+    <p class="date es">¡Feliz <span id="date-day-es"></span>!<br><a href="https://enchantingwind.com">Maya</a> &#9829; <a href="https://andytrattner.com">Andy</a><br><span class="date-num"></span> de <span id="date-month-es"></span></p>
   </div>
 
   <script>
-    /*
-    const DAY_DICT = {
+    var CURRENT_LANG = true; //is English
+
+    function switchToEN(){
+      if (!CURRENT_LANG){
+        // change button backgrounds
+        $("#btn-en").css({"background":"#fff","color":"#1aa3c9"});
+        $("#btn-es").css({"background":"none","color":"#fff"});
+
+        // hide spanish divs
+        esItems = document.getElementsByClassName("es");
+        for (i of esItems){
+          i.style.display = "none";
+        }
+        // show english divs
+        enItems = document.getElementsByClassName("en");
+        for (i of enItems){
+          i.style.display = "block";
+        }
+
+        // set boolean flag
+        CURRENT_LANG = true;
+      }
+      return;
+    }
+
+    function switchToES(){
+      if (CURRENT_LANG){
+        // change button backgrounds
+        $("#btn-en").css({"background":"none","color":"#fff"});
+        $("#btn-es").css({"background":"#fff","color":"#1aa3c9"});
+
+        // hide english divs
+        enItems = document.getElementsByClassName("en");
+        for (i of enItems){
+          i.style.display = "none";
+        }
+        // show spanish divs
+        esItems = document.getElementsByClassName("es");
+        for (i of esItems){
+          i.style.display = "block";
+        }
+
+        // set bool flag
+        CURRENT_LANG=false;
+      }
+      return;
+    }
+
+
+    const DAY_DICT_ES = {
       0: 'domingo',
       1: 'lunes',
       2: 'martes',
@@ -71,7 +174,16 @@
       5: 'viernes',
       6: 'sabado'
     }
-    const MONTH_DICT = {
+    const DAY_DICT_EN = {
+      0: 'Sunday',
+      1: 'Monday',
+      2: 'Tuesday',
+      3: 'Wednesday',
+      4: 'Thursday',
+      5: 'Friday',
+      6: 'Saturday'
+    }
+    const MONTH_DICT_ES = {
       0: 'enero',
       1: 'febrero',
       2: 'marzo',
@@ -85,9 +197,31 @@
       10: 'noviembre',
       11: 'diciembre'
     }
+    const MONTH_DICT_EN = {
+      0: 'Jan',
+      1: 'Feb',
+      2: 'Mar',
+      3: 'Apr',
+      4: 'May',
+      5: 'Jun',
+      6: 'Jul',
+      7: 'Aug',
+      8: 'Sept',
+      9: 'Oct',
+      10: 'Nov',
+      11: 'Dec'
+    }
     const d = new Date();
-    document.getElementById("date-day").innerHTML = DAY_DICT[d.getDay()];
-    document.getElementById("date-num").innerHTML = d.getDate();
-    document.getElementById("date-month").innerHTML = MONTH_DICT[d.getMonth()];*/
+
+    document.getElementById("date-day-es").innerHTML = DAY_DICT_ES[d.getDay()];
+    document.getElementById("date-day-en").innerHTML = DAY_DICT_EN[d.getDay()];
+
+    const nums = document.getElementsByClassName("date-num");
+    for (e of nums){
+      e.innerHTML = d.getDate();
+    }
+
+    document.getElementById("date-month-es").innerHTML = MONTH_DICT_ES[d.getMonth()];
+    document.getElementById("date-month-en").innerHTML = MONTH_DICT_EN[d.getMonth()];
   </script>
 </body>
