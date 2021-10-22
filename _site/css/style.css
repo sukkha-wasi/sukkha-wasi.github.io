@@ -1,0 +1,148 @@
+body{
+  font-family: 'Lato', serif;
+  color: #fff;
+  margin:0;
+  background-color: #1aa3c9;
+}
+
+img{
+  width: 100%;
+}
+
+.en {
+  display:block;
+}
+
+.es {
+  display:none;
+}
+
+#btn-en {
+  background:#fff;
+  color:#1aa3c9;
+}
+
+
+.lang-button{
+  display: inline-block;
+  font-size: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border: 1.5px solid #fff;
+  border-radius: 15px;
+  -moz-border-radius: 35px;
+}
+
+.lang-button:hover{
+  background:#fff;
+  color:#1aa3c9;
+  border-radius: 15px;
+  -moz-border-radius: 15px;
+  cursor:pointer;
+}
+
+.lang-btn-wrap{
+  padding-top:0;
+  margin-top:15px;
+  line-height: 0.5em;
+}
+
+.background{
+  width: 100%;
+  position:relative;
+  z-index: 0;
+}
+.background:after {
+  width:100%;
+  content:'';
+  display:block;
+  position:absolute;
+  top:0;
+  left:0;
+  background: linear-gradient(to left, #1aa3c9 0%,rgba(255,255,255,0) 69%);
+  height:100%;
+}
+
+.sidebar{
+  background: linear-gradient(to left, #1aa3c9 0%,rgba(255,255,255,0) 100%);
+  position: absolute;
+  text-align: right;
+  left: 5%;
+  right: 0;
+  padding-left:20%;
+  padding-right:5%;
+  padding-bottom:1%;
+  font-size: 64px;
+  z-index: 1;
+  margin-top:0px;
+}
+
+.title-text{
+  margin-top:55px;
+  margin-bottom:55px;
+}
+
+.day-heading{
+  font-size: 26px;
+}
+
+p {
+  font-size: 20px;
+  padding-bottom: 10px;
+}
+
+.nav{
+  padding-top: 15px;
+  padding-bottom: 25px;
+}
+
+.nav a{
+  text-decoration:none;
+}
+
+.nav a::before{
+  content: '→ ';
+}
+
+.nav a:hover{
+  font-style: normal;
+  text-decoration: underline;
+}
+
+a {
+  color:#fff;
+}
+
+a:hover {
+  font-style: italic;
+}
+
+.date {
+  font-size: 18px;
+}
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)  { /* iPad */
+
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) { /* small iPhone */
+
+}
+
+@media only screen
+and (min-device-width : 568px)
+and (max-device-width : 768px) { /* bigger phone */
+
+}
+
+@media only screen and (max-device-width: 480px) { /* tiny screen */
+
+}
