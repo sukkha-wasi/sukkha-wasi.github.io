@@ -94,7 +94,7 @@ body{
 
 .title-text-landing{
   margin-top:55px;
-  margin-bottom:55px;
+  margin-bottom: 0px;
 }
 .title-text-mobile{
   display:none;
@@ -110,22 +110,23 @@ p {
 }
 
 .nav{
-  padding-top: 15px;
-  padding-bottom: 25px;
+  padding-bottom: 40px;
+  padding-top:0px;
+  margin-top:0px;
 }
 
 .nav a{
   text-decoration:none;
 }
 
-.nav a::before{
+/*.nav a::before{
   content: '→ ';
 }
 
 .nav a:hover{
   font-style: normal;
   text-decoration: underline;
-}
+}*/
 
 a {
   color:#fff;
@@ -137,8 +138,12 @@ a:hover {
 
 .date {
   font-size: 18px;
+  padding-top:25px;
 }
 
+.menu-link {
+  text-decoration: none;
+}
 
 @media only screen
 and (min-device-width : 1900px) {
@@ -166,6 +171,7 @@ and (min-device-width : 1900px) {
   body{
     background-color: #1aa3c9;
   }
+
 }
 
 @media only screen
@@ -190,8 +196,12 @@ and (max-device-width : 1024px)  { /* iPad */
   }
   .title-text-mobile{
     margin-top:55px;
-    margin-bottom:55px;
+    margin-bottom:0px;
     display:block;
+  }
+
+  .nav{
+    padding-bottom: 35px;
   }
 
   .day-heading{
@@ -225,6 +235,9 @@ and (max-device-width : 768px) { /* bigger phone */
     padding-right:6%;
     padding-bottom:1%;
   }
+  .nav{
+    padding-bottom: 30px;
+  }
 
   .day-heading{
     font-size: 24px;
@@ -249,7 +262,7 @@ and (max-device-width : 768px) { /* bigger phone */
   }
   .title-text-mobile{
     margin-top:55px;
-    margin-bottom:55px;
+    margin-bottom:0px;
     display:block;
   }
 }
@@ -268,7 +281,9 @@ and (max-device-width : 568px) { /* small iPhone */
     padding-right:4%;
     padding-bottom:1%;
   }
-
+  .nav{
+    padding-bottom: 25px;
+  }
   .day-heading{
     font-size: 18px;
   }
@@ -292,7 +307,7 @@ and (max-device-width : 568px) { /* small iPhone */
   }
   .title-text-mobile{
     margin-top:55px;
-    margin-bottom:55px;
+    margin-bottom:0px;
     display:block;
   }
 }
@@ -310,6 +325,9 @@ and (max-device-width : 568px) { /* small iPhone */
     padding-left:20%;
     padding-right:4%;
     padding-bottom:1%;
+  }
+  .nav{
+    padding-bottom: 22px;
   }
 
   .day-heading{
@@ -335,7 +353,7 @@ and (max-device-width : 568px) { /* small iPhone */
   }
   .title-text-mobile{
     margin-top:55px;
-    margin-bottom:55px;
+    margin-bottom:0px;
     display:block;
   }
 }
